@@ -2,7 +2,7 @@
 
 Prevents design decision regressions after Claude Code context compaction.
 
-When Claude's context window compacts, it forgets the conversation. This hook captures every design decision and rejected approach **before** compaction, then re-injects them into Claude's context immediately after -- so Claude never reverts to an approach you already ruled out.
+When Claude Code compacts the context window, the summarization process can lose nuance -- particularly around approaches that were explored and discarded. This creates regressions where Claude re-suggests something you already ruled out. This hook explicitly captures design decisions and rejected approaches before compaction and re-injects them afterward, so that context survives intact.
 
 ## What it does
 
